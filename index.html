@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nietzsche: Soy Dinamita</title>
+  <meta name="description" content="Nietzsche explicado de forma interactiva: vida, obra, ideas principales, actualización, juegos y simulacro de examen." />
+  <meta name="theme-color" content="#0c0a09" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0a09'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' font-family='Georgia' font-style='italic' fill='%23d9b45a'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+  <header class="topbar">
+    <a href="#inicio" class="brand"><em>N</em><span>Soy dinamita</span></a>
+    <div class="topbar-right">
+      <span class="score-chip" title="Juegos completados"><span class="score-dot"></span><b id="gamesDone">0</b>/<span id="gamesTotal">7</span> juegos</span>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">
+        <span class="menu-label">Índice</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Índice" hidden>
+    <div class="menu-inner">
+      <p class="menu-kicker">Recorrido</p>
+      <ol class="menu-list" id="menuList"></ol>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio" data-label="Inicio">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="kicker hero-kicker">Filosofía contemporánea · Unidad IV · La reacción antirracionalista</p>
+        <h1 class="hero-title" id="heroTitle">Dios ha muerto.</h1>
+        <p class="hero-sub">Friedrich Nietzsche <span class="mono">(1844 – 1900)</span> sin leer letra por letra: bajá, mirá, jugá y llegá al examen sabiendo.</p>
+        <div class="hero-meta">
+          <span><b>Vida</b></span><span class="sep">/</span>
+          <span><b>Obra</b></span><span class="sep">/</span>
+          <span><b>9 ideas</b></span><span class="sep">/</span>
+          <span><b>Actualización</b></span><span class="sep">/</span>
+          <span><b>Simulacro</b></span>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span>Bajá</span><i></i></div>
+    </section>
+
+    <!-- ============ DINAMITA (pinned) ============ -->
+    <section class="dinamita" id="dinamita" aria-label="Soy dinamita">
+      <div class="dinamita-stage">
+        <div class="fuse" aria-hidden="true">
+          <svg viewBox="0 0 1000 120" preserveAspectRatio="none">
+            <path id="fusePath" d="M0,60 C120,10 220,110 340,60 S560,10 680,60 S880,110 1000,60" />
+          </svg>
+          <span class="spark" id="spark"></span>
+        </div>
+        <p class="dina-pre" id="dinaPre">“Yo no soy un hombre,</p>
+        <p class="dina-word" id="dinaWord">soy dinamita.”</p>
+        <p class="dina-foot">— Nietzsche, <em>Ecce homo</em></p>
+        <div class="flash" id="flash" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============ INTRO / MAPA ============ -->
+    <section class="intro" id="mapa" data-label="El mapa">
+      <div class="wrap">
+        <p class="kicker" data-reveal>Lo que entra en la evaluación</p>
+        <h2 class="display" data-reveal>Un pensador que no quiso<br /><em>ordenar</em> nada. Nosotros sí.</h2>
+        <p class="lede" data-reveal>El profe pidió <b>vida, obra, ideas principales y actualización</b>. Las ideas principales son estas nueve, en el orden del pizarrón. Tocá cualquiera para saltar directo.</p>
+
+        <ol class="idea-map" id="ideaMap">
+          <li data-reveal><a href="#razon"><span class="n">01</span><span class="t">La vida contra la razón</span></a></li>
+          <li data-reveal><a href="#tragedia"><span class="n">02</span><span class="t">El espíritu de la tragedia</span></a></li>
+          <li data-reveal><a href="#transmutacion"><span class="n">03</span><span class="t">Transmutación de valores</span></a></li>
+          <li data-reveal><a href="#creacion"><span class="n">04</span><span class="t">Creación de valores</span></a></li>
+          <li data-reveal><a href="#poder"><span class="n">05</span><span class="t">La voluntad de poder</span></a></li>
+          <li data-reveal><a href="#retorno"><span class="n">06</span><span class="t">El eterno retorno</span></a></li>
+          <li data-reveal><a href="#superhombre"><span class="n">07</span><span class="t">El superhombre</span></a></li>
+          <li data-reveal><a href="#nihilismo"><span class="n">08</span><span class="t">El nihilismo</span></a></li>
+          <li data-reveal><a href="#actualizacion"><span class="n">09</span><span class="t">Actualización</span></a></li>
+        </ol>
+
+        <div class="howto" data-reveal>
+          <div><span class="tag tag-gold">En criollo</span><p>La idea explicada como te la contaría un compañero.</p></div>
+          <div><span class="tag tag-wine">Para el examen</span><p>Las palabras clave que el profe va a buscar en tu respuesta.</p></div>
+          <div><span class="tag tag-blue">Jugá</span><p>Minijuegos de un minuto. Tu progreso queda guardado en este dispositivo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDA ============ -->
+    <section class="vida" id="vida" data-label="Vida">
+      <div class="vida-pin">
+        <div class="vida-head">
+          <p class="kicker">Parte I</p>
+          <h2 class="display">Vida</h2>
+          <p class="vida-hint">Seguí bajando: la línea de tiempo avanza sola <span aria-hidden="true">→</span></p>
+        </div>
+        <div class="vida-track" id="vidaTrack">
+          <article class="hito">
+            <span class="hito-year">1844</span>
+            <h3>Nace en Röcken</h3>
+            <p>15 de octubre, en la Sajonia prusiana. Su padre es <b>pastor luterano</b>.</p>
+          </article>
+          <article class="hito">
+            <span class="hito-year">1849</span>
+            <h3>Muere su padre</h3>
+            <p>En dramáticas circunstancias. Crece en un ambiente <b>femenino</b> y de <b>severa religiosidad</b>. Estudia en Naumburgo y en el internado de Pforta, donde se enamora de la <b>Grecia clásica</b>.</p>
+          </article>
+          <article class="hito">
+            <span class="hito-year">1864</span>
+            <h3>Bonn → Leipzig</h3>
+            <p>Estudia teología y filología clásica. Un año después sigue a su maestro Ritschl a Leipzig. <b>Abandona la fe</b> y descubre a <b>Schopenhauer</b>.</p>
+          </article>
+          <article class="hito hito-accent">
+            <span class="hito-year">Wagner</span>
+            <h3>Amistad con Richard Wagner</h3>
+            <p>Lo admira como el genio de una nueva cultura. Lo visita seguido en Tribschen, Suiza.</p>
+          </article>
+          <article class="hito">
+            <span class="hito-year">Basilea</span>
+            <h3>Profesor sin terminar de recibirse</h3>
+            <p>Por recomendación de Ritschl, la Universidad de Basilea lo nombra <b>profesor de filología</b> apenas termina sus estudios.</p>
+          </article>
+          <article class="hito">
+            <span class="hito-year">1870</span>
+            <h3>Guerra franco-prusiana</h3>
+            <p>Se ofrece como <b>enfermero voluntario</b>. Se enferma, vuelve y retoma la docencia.</p>
+          </article>
+          <article class="hito hito-accent">
+            <span class="hito-year">1872</span>
+            <h3><em>El origen de la tragedia</em></h3>
+            <p>Su primer libro. Después llega la <b>ruptura con Wagner</b>: siente que usa el arte como propaganda y que esconde valores cristianos.</p>
+          </article>
+          <article class="hito">
+            <span class="hito-year">1879</span>
+            <h3>Deja la cátedra</h3>
+            <p>Por su salud. Empieza una vida errante entre <b>Suiza y el norte de Italia</b>, buscando climas que lo alivien.</p>
+          </article>
+          <article class="hito hito-accent">
+            <span class="hito-year">1881</span>
+            <h3>La “revelación”</h3>
+            <p>Se le aparece la idea del <b>eterno retorno</b>. A partir de acá escribe sus obras más representativas.</p>
+          </article>
+          <article class="hito hito-dark">
+            <span class="hito-year">1889</span>
+            <h3>Colapso en Turín</h3>
+            <p>El 3 de enero cae en la calle, presa de un <b>colapso mental</b> del que nunca se recupera. Lo cuidan su madre y después su hermana.</p>
+          </article>
+          <article class="hito hito-dark">
+            <span class="hito-year">1900</span>
+            <h3>Muere en Weimar</h3>
+            <p>25 de agosto. Su fama llega <b>después</b>, cuando ya no podía darse cuenta.</p>
+          </article>
+        </div>
+        <div class="vida-bar" aria-hidden="true"><span id="vidaBar"></span></div>
+      </div>
+    </section>
+
+    <!-- ============ OBRA ============ -->
+    <section class="obra" id="obra" data-label="Obra">
+      <div class="wrap">
+        <p class="kicker" data-reveal>Parte II</p>
+        <h2 class="display" data-reveal>Obra</h2>
+        <p class="lede" data-reveal>Tres etapas y un libro póstumo. <b>Tocá cada carta</b> para darla vuelta.</p>
+
+        <div class="etapas">
+          <div class="etapa" data-reveal>
+            <header><span class="etapa-n">1</span><div><h3>Etapa estética</h3><p>Wagner + Schopenhauer. El arte griego como modelo.</p></div></header>
+            <div class="cards">
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1872</b><i>El origen de la tragedia</i></span><span class="back">Exalta la energía y el vitalismo de Wagner contra la cultura <b>racionalista y burguesa</b>. Acá aparecen Apolo y Dioniso.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1873–76</b><i>Consideraciones intempestivas</i></span><span class="back">Cuatro ensayos. Presenta a <b>Schopenhauer y Wagner</b> como líderes de una nueva vitalidad cultural.</span></span></button>
+            </div>
+          </div>
+          <div class="etapa" data-reveal>
+            <header><span class="etapa-n">2</span><div><h3>Etapa “ilustrada”</h3><p>Más cerca del racionalismo, el positivismo y la ciencia.</p></div></header>
+            <div class="cards">
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1878–79</b><i>Humano, demasiado humano</i></span><span class="back">Abre el segundo período. Ya asoman las ideas de sus obras posteriores.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1881</b><i>Aurora</i></span><span class="back">Sigue el período más cercano al racionalismo ilustrado.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1882</b><i>La gaya ciencia</i></span><span class="back">Cierra la etapa. Acá aparece la célebre frase “<b>Dios ha muerto</b>”.</span></span></button>
+            </div>
+          </div>
+          <div class="etapa etapa-big" data-reveal>
+            <header><span class="etapa-n">3</span><div><h3>Madurez</h3><p>Después de la “revelación” del eterno retorno (1881). Las obras más representativas.</p></div></header>
+            <div class="cards">
+              <button class="flip flip-star" type="button"><span class="flip-in"><span class="front"><b>1883–85</b><i>Así habló Zaratustra</i></span><span class="back">Su obra más famosa. El profeta Zaratustra anuncia el <b>superhombre</b> y el <b>eterno retorno</b>.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1886</b><i>Más allá del bien y del mal</i></span><span class="back">Ataca la moral tradicional y su idea de bien y mal.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1887</b><i>La genealogía de la moral</i></span><span class="back">Rastrea de dónde viene la moral: <b>señores vs. esclavos</b> y el resentimiento.</span></span></button>
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>1888</b><i>El ocaso de los ídolos · El Anticristo · Ecce homo</i></span><span class="back">Un año frenético. <i>Ecce homo</i> es <b>autobiográfico</b>. También <i>El caso Wagner</i> y <i>Nietzsche contra Wagner</i>. Casi todo se publicó años después.</span></span></button>
+            </div>
+          </div>
+          <div class="etapa etapa-post" data-reveal>
+            <header><span class="etapa-n">†</span><div><h3>Póstuma</h3><p>Apareció cuando él ya había perdido la lucidez o muerto.</p></div></header>
+            <div class="cards">
+              <button class="flip" type="button"><span class="flip-in"><span class="front"><b>póstuma</b><i>La voluntad de poder</i></span><span class="back">Recopila <b>anotaciones</b> que Nietzsche había preparado años antes.</span></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 01 LA VIDA CONTRA LA RAZÓN ============ -->
+    <section class="chapter" id="razon" data-label="01 · La vida contra la razón">
+      <div class="chapter-head wrap">
+        <span class="chapter-num" data-reveal>01</span>
+        <h2 class="display" data-reveal>La vida <em>contra</em> la razón</h2>
+      </div>
+
+      <div class="scrolly" data-scrolly="razon">
+        <div class="scrolly-visual">
+          <div class="order-grid" id="orderGrid" aria-hidden="true"></div>
+          <p class="visual-caption" id="razonCaption">La razón: todo en su casillero.</p>
+        </div>
+        <div class="scrolly-steps">
+          <div class="step" data-step="0">
+            <div class="step-card">
+              <h3>No es un sistema</h3>
+              <p>Su obra <b>no constituye un sistema</b>. Una mente tan enemiga del logicismo de Hegel y de toda razón esquematizante no podía escribir ordenadamente. Sus libros son un <b>desborde literario</b>: frases vigorosas, a veces brutales.</p>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <div class="step-card">
+              <h3>Habla la vida, no la razón</h3>
+              <p>En sus textos parece hablar más la vida que la razón, “el espíritu de <b>Dioniso</b>”. Nietzsche encarna la <b>reacción de lo vital</b> contra esa razón absoluta que pretendía absorber y dominar toda la realidad.</p>
+              <blockquote>“Un día mi nombre irá unido al recuerdo de una crisis como jamás la ha habido en la tierra.”</blockquote>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-card">
+              <h3>La herencia de Schopenhauer</h3>
+              <p>De Schopenhauer toma la <b>oposición entre vida y razón</b>. La razón no puede hacerse cargo de la vida, porque la vida es justamente lo opuesto a la razón.</p>
+              <p class="big-def">La vida es <b>irracionalidad</b>, impulso ciego y sin sentido; por eso es horror y absurdo.</p>
+            </div>
+          </div>
+          <div class="step" data-step="3">
+            <div class="step-card">
+              <h3>Las máscaras</h3>
+              <p>La <b>ciencia, la moral y la religión</b> intentaron “entender” la vida dándole una verdad, un valor y un sentido objetivos. Con eso solo la <b>enmascararon</b> y le quitaron su energía auténtica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>La vida es un quilombo hermoso y terrible: no tiene un sentido escrito de antemano. La razón quiere meterla en cajitas (“esto es verdad”, “esto es lo correcto”) y así la apaga. Nietzsche viene a <b>romper las cajitas</b>.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>no es un sistema</li><li>reacción de lo vital</li><li>Schopenhauer</li><li>vida = irracional</li><li>ciencia, moral, religión</li><li>enmascaran la vida</li><li>“soy dinamita”</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 EL ESPÍRITU DE LA TRAGEDIA ============ -->
+    <section class="chapter" id="tragedia" data-label="02 · El espíritu de la tragedia">
+      <div class="chapter-head wrap">
+        <span class="chapter-num" data-reveal>02</span>
+        <h2 class="display" data-reveal>El espíritu de la tragedia</h2>
+        <p class="lede" data-reveal>En su primer momento, el <b>“estético”</b>, Nietzsche descubre en el arte griego, y sobre todo en la <b>tragedia</b>, la única forma adecuada de enfrentar la vida tal como es. La clave está en juntar dos fuerzas. <b>Arrastrá la línea del medio.</b></p>
+      </div>
+
+      <div class="duel" id="duel">
+        <div class="duel-side duel-apolo">
+          <div class="duel-content">
+            <div class="sun" aria-hidden="true"></div>
+            <p class="duel-god">Apolo</p>
+            <p class="duel-sub">Dios de la poesía y las artes</p>
+            <ul>
+              <li>Forma</li><li>Medida</li><li>Revestimiento bello</li><li>“Velo de Maya”</li><li>El diálogo trágico</li>
+            </ul>
+          </div>
+        </div>
+        <div class="duel-side duel-dioniso" id="duelDioniso">
+          <div class="duel-content">
+            <div class="blob" aria-hidden="true"></div>
+            <p class="duel-god">Dioniso</p>
+            <p class="duel-sub">Dios del vino y las fiestas</p>
+            <ul>
+              <li>Impulso</li><li>Pasión desenfrenada</li><li>Lo sórdido y tenebroso</li><li>La música</li><li>La danza coral</li>
+            </ul>
+          </div>
+        </div>
+        <div class="duel-handle" id="duelHandle" role="slider" tabindex="0" aria-label="Mover entre Apolo y Dioniso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <span class="duel-knob"><i>‹</i><i>›</i></span>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="equation" data-reveal>
+          <div class="eq-term eq-apolo">Apolo<small>forma</small></div>
+          <div class="eq-op">+</div>
+          <div class="eq-term eq-dioniso">Dioniso<small>vida</small></div>
+          <div class="eq-op">=</div>
+          <div class="eq-term eq-result">Tragedia<small>la vida afirmada como arte</small></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card" data-reveal>
+            <h3>¿Qué logra la tragedia?</h3>
+            <p>No <b>niega</b> lo terrible de la vida: lo <b>transforma en algo estéticamente sublime</b>. La vida queda afirmada en su irracionalidad, convertida en arte.</p>
+            <p>El ideal humano que sale de acá es el <b>héroe trágico</b>, cuya fuerza se muestra en cumplir su destino fatal.</p>
+          </div>
+          <div class="card card-villain" data-reveal>
+            <span class="villain-tag">El villano</span>
+            <h3>Sócrates</h3>
+            <p>Con él empieza la <b>falsa cultura racionalista</b>, que siguió toda la filosofía posterior. La razón <b>encorseta, sujeta y deprime</b> la vida: siempre uniforma y vuelve todo mediocre, ahogando la excelencia individual.</p>
+            <p>Nietzsche pide <b>volver a la Grecia presocrática</b>: una naturaleza que nace, muere y renace siempre. Ya se asoman el naturalismo, el fatalismo y el sentido cíclico de la vida.</p>
+          </div>
+        </div>
+
+        <div class="game-slot" data-reveal>
+          <div class="game" data-game="apolo" id="gameApolo"></div>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>Dioniso es la fiesta descontrolada; Apolo, el que le pone forma linda. Los griegos no escondían el lado oscuro de la vida: lo subían al escenario y lo volvían arte. <b>Sócrates arruinó la fiesta</b> al querer explicarlo todo con la razón.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>momento estético</li><li>apolíneo: forma y medida</li><li>dionisíaco: impulso y pasión</li><li>conciliación</li><li>héroe trágico</li><li>Sócrates, cultura racionalista</li><li>Grecia presocrática</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 TRANSMUTACIÓN ============ -->
+    <section class="chapter" id="transmutacion" data-label="03 · Transmutación de valores">
+      <div class="flip-stage" id="flipStage">
+        <p class="kicker">03 · La afirmación de la vida exige reaccionar también contra la moral</p>
+        <p class="flip-word" id="flipWord" aria-label="Valores">VALORES</p>
+        <p class="flip-caption" id="flipCaption">Todo lo que hasta ahora se llamó moral <b>debe ser destruido</b>, porque se levantó sobre la negación de la vida.</p>
+      </div>
+
+      <div class="wrap">
+        <h2 class="display center" data-reveal>Transmutación de <em>todos</em> los valores</h2>
+
+        <div class="versus" data-reveal>
+          <div class="vs-col vs-esclavos">
+            <p class="vs-title">Moral de esclavos</p>
+            <p class="vs-who">La que Nietzsche ataca</p>
+          </div>
+          <div class="vs-mid">vs</div>
+          <div class="vs-col vs-senores">
+            <p class="vs-title">Moral de señores</p>
+            <p class="vs-who">La que Nietzsche propone</p>
+          </div>
+        </div>
+
+        <div class="vs-table">
+          <div class="vs-row" data-reveal><span class="vs-label">Nace de</span><span class="vs-e">El <b>resentimiento</b> del débil frente a la fuerza y la plenitud de los poderosos.</span><span class="vs-s">La <b>plenitud vital</b> de los fuertes.</span></div>
+          <div class="vs-row" data-reveal><span class="vs-label">Ante la vida</span><span class="vs-e">La <b>niega</b>: ascetismo, renuncia, sometimiento de lo vital.</span><span class="vs-s">La <b>afirma</b>: es la negación de la negación de la vida.</span></div>
+          <div class="vs-row" data-reveal><span class="vs-label">Sus valores</span><span class="vs-e">Caridad, humildad, resignación, misericordia: expresiones de la <b>debilidad</b>.</span><span class="vs-s">Nobleza, arrogancia, altivez: lo <b>magnífico y enérgico</b>.</span></div>
+          <div class="vs-row" data-reveal><span class="vs-label">Apuesta a</span><span class="vs-e">El <b>grupo</b>: moral <b>gregaria</b>, porque en la manada el débil se defiende del fuerte.</span><span class="vs-s">La <b>individualidad</b>, la personalidad excelsa.</span></div>
+          <div class="vs-row" data-reveal><span class="vs-label">Promete</span><span class="vs-e">Un <b>más allá</b>, gratificante para los sumisos: una huida.</span><span class="vs-s">Nada fuera de esta vida.</span></div>
+          <div class="vs-row" data-reveal><span class="vs-label">Tipo de vida</span><span class="vs-e">Vida <b>decadente</b>.</span><span class="vs-s">Vida <b>ascendente</b>.</span></div>
+        </div>
+
+        <div class="trap" data-reveal>
+          <div class="trap-icon" aria-hidden="true">!</div>
+          <div>
+            <h3>Trampa de examen: <em>no</em> es la ley del más fuerte</h3>
+            <p>Nietzsche <b>no</b> defiende la pura fuerza física ni el dominio de hecho. Si fuera así, la moral de esclavos sería la “verdadera”, ¡porque de hecho le ganó a la de los señores! Se aleja del biologicismo positivista:</p>
+            <blockquote>“La concepción mecanicista no quiere más que cantidades, pero la fuerza se halla en la cualidad.”</blockquote>
+            <p>También desprecia lo vil, plebeyo e indigno, y los apetitos puramente carnales. La moral de señores vale porque sus valores <b>expresan</b> fuerza, energía y vida ascendente, no porque “tengan” fuerza.</p>
+          </div>
+        </div>
+
+        <div class="game-slot" data-reveal>
+          <div class="game" data-game="moral" id="gameMoral"></div>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>Los que no podían vivir a pleno inventaron que lo “bueno” era justamente no hacerlo: ser humilde, resignarse, aguantar, que el premio llega después. Nietzsche dice que eso es <b>bronca disfrazada de virtud</b>, y que hay que dar vuelta la tabla de valores.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>moral de esclavos</li><li>resentimiento</li><li>ascetismo y renuncia</li><li>moral gregaria</li><li>más allá</li><li>moral de señores</li><li>individualidad</li><li>“la fuerza se halla en la cualidad”</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 CREACIÓN DE VALORES ============ -->
+    <section class="chapter chapter-light" id="creacion" data-label="04 · Creación de valores y muerte de Dios">
+      <div class="wrap">
+        <div class="chapter-head">
+          <span class="chapter-num" data-reveal>04</span>
+          <h2 class="display" data-reveal>Creación de valores y <em>“muerte”</em> de Dios</h2>
+        </div>
+
+        <div class="libre" id="libre">
+          <p class="libre-q libre-1">¿Libre <span>de qué?</span></p>
+          <p class="libre-q libre-2">¿Libre <span>para qué?</span></p>
+          <p class="libre-note">No alcanza con <b>liberarse</b> de la moral que deprime la vida. La pregunta definitiva es <b>qué hacés</b> con esa libertad.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card card-light" data-reveal>
+            <h3>El hombre superior crea</h3>
+            <p>La personalidad que define la moral de señores no es pura espontaneidad biológica: es <b>tarea y empeño</b>, es <b>creación de valores</b>. El hombre superior no necesita el abrigo de la manada (la “grey”) y, desde su soledad excelsa, <b>dictamina el sentido</b> del mundo y de sí mismo.</p>
+          </div>
+          <div class="card card-light" data-reveal>
+            <h3>Por eso Dios tiene que morir</h3>
+            <blockquote>“Esta voluntad es la que me alejó de Dios y de los dioses; porque, ¡qué podría yo crear si hubiera dioses!”</blockquote>
+            <p>Si Dios existe, los valores ya están hechos y el hombre solo obedece. <b>Negar a Dios es condición para crear.</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="crack" id="crack">
+        <div class="crack-text" aria-label="Dios ha muerto">
+          <span class="crack-top">Dios ha muerto</span>
+          <span class="crack-bottom" aria-hidden="true">Dios ha muerto</span>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="quotes">
+          <figure class="quote" data-reveal><blockquote>“Dionisos contra el Crucificado.”</blockquote><figcaption>Su lema. El cristianismo es <b>odio a la vida</b>, la máxima expresión de la moral de esclavos.</figcaption></figure>
+          <figure class="quote" data-reveal><blockquote>“Yo soy por entero cuerpo, y nada más.”</blockquote><figcaption>Contra la vida del más allá: <b>unicidad de este mundo</b>.</figcaption></figure>
+          <figure class="quote" data-reveal><blockquote>“Inocencia del ser.”</blockquote><figcaption>La vida no es buena ni mala: <b>no es un fenómeno moral</b>, es solo vida.</figcaption></figure>
+        </div>
+
+        <div class="card card-light wide" data-reveal>
+          <h3>Dos detalles que suman puntos</h3>
+          <ul class="ticks">
+            <li>Declara “Dios ha muerto” <b>sin análisis teóricos</b>: para él, la falsedad de Dios se ve en su enemistad con la vida.</li>
+            <li>Conserva cierta <b>admiración por el esplendor y la magnificencia del catolicismo</b>, a diferencia del luteranismo.</li>
+            <li>Hay que derribar los valores cristianos <b>sin caer en el puro nihilismo</b>: la moral de la vida tiene que <b>crear</b> valores nuevos.</li>
+            <li>Busca ese ideal en la <b>original alma germánica</b> (sin cristianismo ni romanidad), combinada con la <b>Grecia mítica y heroica</b>.</li>
+          </ul>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>Si alguien de arriba ya te dejó escrito qué está bien y qué está mal, vos no creás nada: obedecés. Nietzsche “mata” a Dios para que el hombre se haga cargo de <b>inventar su propio sentido</b>. Es libertad, pero también es una carga pesada.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>¿libre para qué?</li><li>creación de valores</li><li>hombre superior</li><li>“Dios ha muerto”</li><li>cristianismo = odio a la vida</li><li>Dionisos contra el Crucificado</li><li>inocencia del ser</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 VOLUNTAD DE PODER ============ -->
+    <section class="chapter" id="poder" data-label="05 · La voluntad de poder">
+      <div class="chapter-head wrap">
+        <span class="chapter-num" data-reveal>05</span>
+        <h2 class="display" data-reveal>La voluntad de <em>poder</em></h2>
+      </div>
+
+      <div class="scrolly" data-scrolly="poder">
+        <div class="scrolly-visual">
+          <div class="meter" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <circle class="meter-bg" cx="100" cy="100" r="86" />
+              <circle class="meter-fg" id="meterFg" cx="100" cy="100" r="86" />
+            </svg>
+            <div class="meter-label">
+              <span class="meter-pct" id="meterPct">0%</span>
+              <span class="meter-txt" id="meterTxt">voluntad de vivir</span>
+            </div>
+          </div>
+        </div>
+        <div class="scrolly-steps">
+          <div class="step" data-step="0">
+            <div class="step-card">
+              <h3>De Schopenhauer a Nietzsche</h3>
+              <div class="compare">
+                <div><span class="mini">Schopenhauer</span><b>Voluntad de vivir</b></div>
+                <span class="arrow">→</span>
+                <div><span class="mini">Nietzsche</span><b>Voluntad de poder</b></div>
+              </div>
+              <p>La vida es esencialmente <b>voluntad</b>. Pero la voluntad ya supone la vida, así que no puede ser solo querer lo que ya es: es querer <b>algo más, más vida: poder</b>.</p>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <div class="step-card">
+              <h3>La nueva vara del bien y del mal</h3>
+              <blockquote>Es bueno “todo lo que aumenta el sentimiento de poder”.</blockquote>
+              <p>El bien y el mal, el placer y el dolor, se miden según <b>potencien u obstaculicen</b> el poder. Toda actividad vital es <b>voluntad de dominio</b>, y esa es la clave para entender la vida.</p>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-card">
+              <h3>Conocer también es dominar</h3>
+              <blockquote>“Todo conocimiento no es más que un instrumento de poder.”</blockquote>
+              <p>La razón y el conocimiento son, en definitiva, <b>afán de dominio</b>: amoldar la realidad a lo que nuestra vida necesita.</p>
+            </div>
+          </div>
+          <div class="step" data-step="3">
+            <div class="step-card">
+              <h3>No al pesimismo</h3>
+              <p>Schopenhauer terminaba <b>negando</b> la voluntad para escapar del dolor. Nietzsche rechaza todo ascetismo: la liberación no está en negar la vida sino en <b>afirmarla, a pesar del dolor</b>. Es una afirmación gratuita, sin apoyo ni razón: <b>pura voluntad</b>.</p>
+              <p class="aside">Como en Kierkegaard la fe era creer contra toda esperanza, en Nietzsche el poder es <b>querer contra toda razón</b>.</p>
+            </div>
+          </div>
+          <div class="step" data-step="4">
+            <div class="step-card step-gold">
+              <h3>Amor fati</h3>
+              <p>“Amor al destino”. <b>No es resignación</b>: es <b>amar lo necesario</b>, lo irremediable. Querer la vida tal como es, con su crueldad, sin dulcificarla con esperanzas.</p>
+              <p>Así el destino se vuelve <b>voluntad propia</b>: “quiero que todo sea como es y como fue”. Otra vez, el <b>héroe trágico</b>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>No vivís solo para seguir respirando: vivís para <b>crecer, superarte, expandirte</b>. Eso es la voluntad de poder. Y cuando la vida duele, no te escondés ni te quejás: decís “sí, esto también lo quiero”. Eso es el amor fati.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>voluntad de vivir → de poder</li><li>bueno = aumenta el poder</li><li>conocimiento = instrumento de poder</li><li>rechaza el pesimismo</li><li>afirmación gratuita</li><li>amor fati ≠ resignación</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 ETERNO RETORNO ============ -->
+    <section class="chapter" id="retorno" data-label="06 · El eterno retorno">
+      <div class="chapter-head wrap">
+        <span class="chapter-num" data-reveal>06</span>
+        <h2 class="display" data-reveal>El eterno <em>retorno</em></h2>
+      </div>
+
+      <div class="scrolly" data-scrolly="retorno">
+        <div class="scrolly-visual">
+          <div class="ring" id="ring" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <defs><path id="ringPath" d="M200,200 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0" /></defs>
+              <circle cx="200" cy="200" r="160" class="ring-line" />
+              <circle cx="200" cy="200" r="120" class="ring-line ring-line-2" />
+              <text class="ring-text"><textPath href="#ringPath" textLength="996" lengthAdjust="spacing">lo mismo · otra vez · lo mismo · otra vez · lo mismo · otra vez ·</textPath></text>
+            </svg>
+            <span class="ring-dot"></span>
+            <span class="ring-core">∞</span>
+          </div>
+        </div>
+        <div class="scrolly-steps">
+          <div class="step" data-step="0">
+            <div class="step-card">
+              <h3>Fatalismo total</h3>
+              <p>No afecta solo a la vida del hombre: abarca al <b>universo entero</b>. El mundo es un <b>eterno retorno de lo mismo</b>: un destino necesario y repetitivo, <b>sin transformación ni novedad</b>.</p>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <div class="step-card">
+              <h3>¿Y la libertad?</h3>
+              <p>No hay alternativa ni libre elección. La única posibilidad es <b>afirmar lo único que hay</b>: lo necesario y siempre igual.</p>
+              <p>La libertad que nos dio la muerte de Dios queda reducida a la <b>libre aceptación de lo inevitable</b>.</p>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-card">
+              <h3>Un universo cerrado</h3>
+              <p>El mundo queda encerrado sobre sí mismo, <b>autosuficiente</b>, girando sin fin y <b>sin ningún sentido</b> que no sea interno (inmanente).</p>
+              <p>Esa repetición perpetua es la vida <b>afirmándose a sí misma</b> a escala cósmica, sin buscar sentido ni razón.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="game-slot" data-reveal>
+          <div class="demon" id="demon">
+            <div class="demon-eyes" aria-hidden="true"><i></i><i></i></div>
+            <p class="kicker">Experimento mental · Jugá</p>
+            <h3>Una noche se te aparece un demonio y te dice:</h3>
+            <p class="demon-q">“Esta vida, tal como la vivís ahora, la vas a tener que vivir <b>otra vez e infinitas veces más</b>: cada dolor, cada alegría, cada pensamiento, en el mismo orden.”</p>
+            <div class="demon-actions">
+              <button class="btn btn-wine" data-demon="no">Me tiro al piso y lo maldigo</button>
+              <button class="btn btn-gold" data-demon="si">“¡Nunca escuché nada más divino!”</button>
+            </div>
+            <div class="demon-out" id="demonOut" hidden></div>
+          </div>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>Imaginá que tu vida es una canción en <b>repeat infinito</b>. Si eso te parece una condena, todavía no amás tu vida. El eterno retorno es la <b>prueba de fuego</b> del amor fati: ¿la querrías exactamente igual, para siempre?</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>eterno retorno de lo mismo</li><li>fatalismo</li><li>sin novedad</li><li>libre aceptación de lo inevitable</li><li>universo cerrado</li><li>sentido inmanente</li><li>revelación de 1881</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 SUPERHOMBRE ============ -->
+    <section class="chapter" id="superhombre" data-label="07 · El superhombre">
+      <div class="ascend" id="ascend">
+        <div class="ascend-inner">
+          <p class="kicker">07</p>
+          <p class="ascend-q"><span class="dead">“Dios ha muerto.</span> <span class="alive">Ahora queremos que viva el superhombre.”</span></p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h2 class="display center" data-reveal>El <em>superhombre</em></h2>
+
+        <ol class="stairs">
+          <li data-reveal><span>1</span><div><b>Destrucción</b><p>Transmutación de valores, fin de la moral de esclavos y del cristianismo, <b>muerte de Dios</b>.</p></div></li>
+          <li data-reveal><span>2</span><div><b>Vacío</b><p>El hombre queda en el <b>nihilismo</b> que deja esa crisis universal.</p></div></li>
+          <li data-reveal><span>3</span><div><b>Superación</b><p>Hace falta un <b>nuevo ideal</b> que la supere: el <b>superhombre</b>.</p></div></li>
+        </ol>
+
+        <div class="traits">
+          <div class="trait" data-reveal><h4>Encarnación</h4><p>Es la <b>encarnación perfecta de la voluntad de poder</b>: la existencia humana plenamente vital.</p></div>
+          <div class="trait" data-reveal><h4>Decisión</h4><p>No sale de la evolución involuntaria: es fruto de la <b>decisión</b> de hombres superiores.</p></div>
+          <div class="trait" data-reveal><h4>Creadores</h4><p>No contemplan ni reciben la verdad: <b>le dan a las cosas su valor y su verdad</b>.</p></div>
+          <div class="trait" data-reveal><h4>Excepcionales</h4><p>Al caer todo lo que uniforma, surgen <b>superindividuos</b>: individualidades sublimes.</p></div>
+        </div>
+
+        <figure class="mega-quote" data-reveal>
+          <blockquote>“El César romano con el alma de Cristo.”</blockquote>
+          <figcaption>Una de las pocas veces que intentó definirlo.</figcaption>
+        </figure>
+
+        <div class="trap" data-reveal>
+          <div class="trap-icon" aria-hidden="true">?</div>
+          <div>
+            <h3>La crítica del apunte: <em>nunca lo pudo definir</em></h3>
+            <p>Más allá de las promesas entusiastas, Nietzsche <b>no logró definir el contenido</b> de su ideal y quedó en el vacío que dejó su furia destructora. Y era <b>imposible</b>: el superhombre rechaza toda definición universal y pretende tener todo poder, sin ningún límite. <b>El superhombre rebasa todo límite.</b></p>
+          </div>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>No es un superhéroe ni “alguien más fuerte”. Es quien, después de que se cayeron todas las reglas, <b>crea las suyas</b> y vive a pleno. El problema es que, si no tiene ningún límite, tampoco se puede decir qué es.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>supera el nihilismo</li><li>encarnación de la voluntad de poder</li><li>creadores de valores</li><li>superindividuos</li><li>no es evolución</li><li>“César romano con alma de Cristo”</li><li>no pudo definirlo</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08 NIHILISMO ============ -->
+    <section class="chapter chapter-void" id="nihilismo" data-label="08 · El nihilismo">
+      <div class="chapter-head wrap">
+        <span class="chapter-num" data-reveal>08</span>
+        <h2 class="display" data-reveal>El nihilismo de lo humano <em>sin límite</em></h2>
+      </div>
+
+      <div class="scrolly" data-scrolly="nihilismo">
+        <div class="scrolly-visual">
+          <div class="void" id="void" aria-hidden="true">
+            <span>verdad</span><span>Dios</span><span>bien</span><span>mal</span><span>sentido</span><span>razón</span><span>fin</span><span>moral</span><span>más allá</span><span>valor</span><span>orden</span><span>esperanza</span>
+            <b class="void-q">¿para qué?</b>
+          </div>
+        </div>
+        <div class="scrolly-steps">
+          <div class="step" data-step="0">
+            <div class="step-card">
+              <h3>Demasiado en muy poco</h3>
+              <p>Nietzsche quiso encerrar demasiado contenido en lo <b>humano y terreno</b>, y forzó esas realidades hasta <b>quebrarlas</b>.</p>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <div class="step-card">
+              <h3>Sed de infinito</h3>
+              <p>Quiso <b>saciar su sed de infinito en lo finito</b>, y estiró lo finito hasta desintegrarlo. Se rebeló contra todo lo que fuera límite o condición.</p>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step-card">
+              <h3>La vida como absoluto</h3>
+              <p>Terminó en el <b>vacío de lo ilimitado</b>: una vida cuyo único sentido es ella misma, su propia autoafirmación.</p>
+            </div>
+          </div>
+          <div class="step" data-step="3">
+            <div class="step-card step-void">
+              <h3>Un poder sin “para qué”</h3>
+              <p>El poder es lo máximo de la vida, pero es <b>un poder sin ningún para qué</b>. Y el poder no es un fin, es un <b>medio</b>: sin un fin más allá, queda vacío.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="grid-2">
+          <div class="card" data-reveal>
+            <h3>Legado y proyección</h3>
+            <p>Sus obras están llenas de <b>contradicciones</b> y les falta concreción, pero no se les puede negar <b>convicción y sinceridad</b>. Su doctrina no fue solo teoría: fue una <b>expresión existencial</b>.</p>
+            <p>Hay que leerlo junto a la filosofía que lo precede: es el resultado inevitable de las negaciones del criticismo anterior, la <b>expresión límite y auténtica del nihilismo</b> que ya había abierto el pensamiento inmanentista.</p>
+          </div>
+          <div class="card" data-reveal>
+            <h3>Dato extra: la palabra</h3>
+            <p><b>Nihilismo</b> viene del latín <i>nihil</i>, “nada”: es la <b>pérdida de todo sentido y valor</b>. El término se popularizó en la <b>Rusia de la segunda mitad del siglo XIX</b>, ligado al rechazo de las estructuras sociales del régimen zarista.</p>
+            <p>Ojo con la diferencia: Nietzsche <b>diagnostica</b> el nihilismo y quiere <b>superarlo</b> con el superhombre. El apunte le critica que su propia filosofía <b>termina cayendo</b> en él.</p>
+          </div>
+        </div>
+
+        <div class="boxes">
+          <div class="box box-criollo" data-reveal>
+            <span class="tag tag-gold">En criollo</span>
+            <p>Nietzsche tiró abajo todo para que la vida fuera libre. Pero si la vida solo sirve para afirmarse a sí misma, es como tener la mejor nafta del mundo y <b>ningún lugar adonde ir</b>.</p>
+          </div>
+          <div class="box box-examen" data-reveal>
+            <span class="tag tag-wine">Para el examen</span>
+            <ul class="chips"><li>sed de infinito en lo finito</li><li>vacío de lo ilimitado</li><li>vida como absoluto</li><li>poder sin para qué</li><li>poder = medio, no fin</li><li>expresión límite del nihilismo</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 09 ACTUALIZACIÓN ============ -->
+    <section class="chapter chapter-light" id="actualizacion" data-label="09 · Actualización">
+      <div class="wrap">
+        <div class="chapter-head">
+          <span class="chapter-num" data-reveal>09</span>
+          <h2 class="display" data-reveal>Nietzsche en <em>2026</em></h2>
+          <p class="lede" data-reveal>“Actualización” es mostrar que lo entendiste: llevar una idea a algo de hoy. Acá tenés ideas para elegir. <b>Tocá una tarjeta</b> para ver cómo conectarla.</p>
+        </div>
+
+        <div class="now-grid">
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Creación de valores</span>
+            <h3>“Sé tu mejor versión”</h3>
+            <p class="now-more">La autoayuda y los influencers repiten “creá tu propio camino”. Suena a Nietzsche, pero muchas veces es <b>moral de rebaño</b>: todos persiguen la misma “mejor versión” que dicta el algoritmo. Para Nietzsche, crear valores es tarea solitaria y difícil, no seguir una tendencia.</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Moral gregaria</span>
+            <h3>Redes y cancelación</h3>
+            <p class="now-more">Likes, trends y escraches funcionan como una <b>grey digital</b>: el grupo premia lo que se parece a todos y castiga lo que sobresale. Es lo que Nietzsche llamaba moral gregaria.</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Nihilismo</span>
+            <h3>“Nada importa”</h3>
+            <p class="now-more">Los memes del “nada tiene sentido” y la sensación de vacío de muchos jóvenes son <b>nihilismo puro</b>. La pregunta nietzscheana sigue vigente: muertos los grandes relatos, ¿qué sentido <b>creamos</b> nosotros?</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Voluntad de poder</span>
+            <h3>Cultura del rendimiento</h3>
+            <p class="now-more">Gym, productividad, “hustle”: superarse todo el tiempo. Se parece a la voluntad de poder, pero el apunte nos da la crítica: un poder <b>sin un para qué</b> termina vacío. Rendir más, ¿para qué?</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Amor fati</span>
+            <h3>Estoicismo de TikTok</h3>
+            <p class="now-more">Se viraliza el “amor fati” como frase de tatuaje. Pero para Nietzsche no es aguantar en silencio (eso sería resignación): es <b>querer activamente</b> tu vida entera, también lo que duele.</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Uso y abuso</span>
+            <h3>El nazismo se lo apropió</h3>
+            <p class="now-more">Su hermana Elisabeth editó sus papeles póstumos y los acercó al nazismo, que leyó “superhombre” como raza superior. Es una <b>lectura deformada</b>: el apunte deja claro que la moral de señores <b>no es fuerza bruta</b> ni dominio de hecho.</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Vida vs. razón</span>
+            <h3>Algoritmos e IA</h3>
+            <p class="now-more">Hoy todo se mide, se predice y se optimiza con datos. Nietzsche preguntaría si no estamos haciendo lo mismo que Sócrates: <b>encorsetar la vida</b> en esquemas racionales y perder su energía.</p>
+          </button>
+          <button class="now" type="button" data-reveal>
+            <span class="now-idea">Existencialismo</span>
+            <h3>Lo que viene: Sartre y Heidegger</h3>
+            <p class="now-more">La materia sigue con el <b>existencialismo</b>. Nietzsche es su gran antecedente: sin Dios, el hombre está solo frente a la tarea de <b>darse sentido</b>. Sartre lo va a decir con “el hombre está condenado a ser libre”.</p>
+          </button>
+        </div>
+
+        <div class="template" data-reveal>
+          <p class="kicker">Molde para el examen</p>
+          <p class="template-text">“Una idea de Nietzsche que sigue vigente es <mark>[concepto]</mark>, que significa <mark>[definición con palabras del apunte]</mark>. Hoy se ve en <mark>[ejemplo actual]</mark>, porque <mark>[relación]</mark>. Sin embargo, <mark>[matiz o crítica: por ejemplo, el poder sin un para qué]</mark>.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARENA ============ -->
+    <section class="arena" id="arena" data-label="Zona de juegos">
+      <div class="wrap">
+        <p class="kicker" data-reveal>Zona de juegos</p>
+        <h2 class="display" data-reveal>Ahora, <em>probate</em>.</h2>
+        <p class="lede" data-reveal>Cuatro juegos para fijar todo. Cada uno dura menos de dos minutos.</p>
+
+        <div class="tabs" role="tablist" data-reveal>
+          <button role="tab" class="tab is-on" data-tab="timeline" aria-selected="true">Ordená la vida</button>
+          <button role="tab" class="tab" data-tab="obras" aria-selected="false">¿Qué obra es?</button>
+          <button role="tab" class="tab" data-tab="vf" aria-selected="false">V o F contrarreloj</button>
+          <button role="tab" class="tab" data-tab="fichas" aria-selected="false">Fichas</button>
+        </div>
+
+        <div class="panels">
+          <div class="panel is-on" data-panel="timeline"><div class="game" id="gameTimeline"></div></div>
+          <div class="panel" data-panel="obras" hidden><div class="game" id="gameObras"></div></div>
+          <div class="panel" data-panel="vf" hidden><div class="game" id="gameVF"></div></div>
+          <div class="panel" data-panel="fichas" hidden><div class="game" id="gameFichas"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIMULACRO ============ -->
+    <section class="simulacro" id="simulacro" data-label="Simulacro de examen">
+      <div class="wrap">
+        <p class="kicker" data-reveal>Evaluación escrita · 28 de octubre</p>
+        <h2 class="display" data-reveal>Simulacro</h2>
+        <p class="lede" data-reveal>Respondé con tus palabras, como en la hoja del examen. Después tocá <b>Corregir</b>: te marco qué palabras clave usaste y te muestro una respuesta modelo.</p>
+
+        <div class="sim" id="sim"></div>
+      </div>
+    </section>
+
+    <!-- ============ MACHETE ============ -->
+    <section class="machete" id="machete" data-label="Repaso en 60 segundos">
+      <div class="wrap">
+        <p class="kicker" data-reveal>Último repaso antes de entrar</p>
+        <h2 class="display" data-reveal>Todo en <em>60 segundos</em></h2>
+        <ol class="mach">
+          <li data-reveal><b>Vida contra razón:</b> la vida es irracional y ciega; ciencia, moral y religión la enmascaran. Nietzsche es la reacción de lo vital.</li>
+          <li data-reveal><b>Tragedia:</b> apolíneo (forma, medida) + dionisíaco (impulso, pasión) = la vida afirmada como arte. Sócrates inicia la cultura racionalista que la deprime.</li>
+          <li data-reveal><b>Transmutación:</b> destruir la moral de esclavos (resentimiento, gregaria, ascética, más allá) y proponer la moral de señores (individualidad, nobleza). No es fuerza bruta: la fuerza está en la cualidad.</li>
+          <li data-reveal><b>Creación de valores:</b> no “¿libre de qué?” sino “¿libre para qué?”. Dios ha muerto porque, si hubiera dioses, no se podría crear. Inocencia del ser.</li>
+          <li data-reveal><b>Voluntad de poder:</b> no voluntad de vivir (Schopenhauer) sino de más vida. Bueno es lo que aumenta el poder; conocer es dominar. Amor fati: amar lo necesario, no resignarse.</li>
+          <li data-reveal><b>Eterno retorno:</b> el mundo se repite sin novedad; la libertad es la libre aceptación de lo inevitable. Universo cerrado, sentido inmanente.</li>
+          <li data-reveal><b>Superhombre:</b> supera el nihilismo; encarna la voluntad de poder; crea valores. “César romano con el alma de Cristo”. Nunca pudo definirlo.</li>
+          <li data-reveal><b>Nihilismo:</b> quiso saciar su sed de infinito en lo finito. La vida como absoluto queda vacía: un poder sin para qué.</li>
+          <li data-reveal><b>Actualización:</b> elegí un concepto, definilo con el apunte, conectalo con algo de hoy y sumá un matiz crítico.</li>
+        </ol>
+        <p class="final" data-reveal>Éxitos mañana. <em>Amor fati.</em></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <p>Basado en el apunte de cátedra <i>Historia de la filosofía contemporánea</i>, cap. “La reacción antirracionalista”, págs. 88–97.</p>
+    <button class="btn btn-ghost" id="resetProgress" type="button">Reiniciar progreso de juegos</button>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/games.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
